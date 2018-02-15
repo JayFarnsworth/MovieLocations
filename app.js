@@ -1,5 +1,4 @@
 document.querySelector('#main-search').addEventListener('submit', handleSubmit);
-initMap()
 
 function handleSubmit(event){
   event.preventDefault()
@@ -63,15 +62,18 @@ function fetchScrape(id){
   fetch('http://localhost:4000/scrape/?id=' + id, {mode: 'cors'})
     .then(resp=>resp.json())
     .then(resp=>{
+      console.log(resp)
+      var fictionalLocations = [];
       var json = '{"locations": ['
       for (let i=0;i<resp.length;i++){
         let x = '{\'street\':\'' + `${resp[i].realLocation}` +'\'},'
         json += x;
+        fictionalLocations.push(resp[i].movieLocation);
       }
       var end = '],"options":{"thumbMaps": false,"maxResults": "3"}}';
       json += end;
-      console.log(json)
-      getCoordinates(json)
+      console.log(fictionalLocations)
+      // getCoordinates(json)
     })
 }
 function getCoordinates(json){
@@ -83,11 +85,11 @@ function getCoordinates(json){
       for (let i=0;i<resp.results.length;i++){
         coordinates.push({
           location: `${resp.results[i].providedLocation.street}`,
-          lat: `${resp.results[i].locations[0].latLng.lat}`,
-          lng: `${resp.results[i].locations[0].latLng.lng}`,
+          lat: Number(`${resp.results[i].locations[0].latLng.lat}`),
+          lng: Number(`${resp.results[i].locations[0].latLng.lng}`),
         })
       }
-      formatLocations(coordinates)
+      newMap(coordinates)
     })
 }
 function formatLocations(coordinates){
@@ -100,39 +102,11 @@ function formatLocations(coordinates){
     x.push(coordinates[i].lng)
     locations1.push(x)
   }
-  populateMap(locations1)
-}
-
-function populateMap(locations){
-  console.log(locations)
-
-var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 10,
-  center: new google.maps.LatLng(-33.92, 151.25),
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-});
-
-var infowindow = new google.maps.InfoWindow();
-
-var marker, i;
-
-for (i = 0; i < locations.length; i++) {
-  marker = new google.maps.Marker({
-    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-    map: map
-  });
-
-  google.maps.event.addListener(marker, 'click', (function (marker, i) {
-    return function () {
-      infowindow.setContent(locations[i][0]);
-      infowindow.open(map, marker);
-    }
-  })(marker, i));
-}
+  newMap(locations1)
 }
 
 
-function initMap() {
+function initMap(locations) {
   var myLatLng = { lat: -25.363, lng: 131.044 };
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -145,4 +119,42 @@ function initMap() {
     map: map,
     title: 'Hello World!'
   });
+}
+
+function newMap(locations) {
+  var geoOnly = [];
+  var locationOnly = [];
+  for (let i=0;i<locations.length;i++){
+    let a = {};
+    a.lat = locations[i].lat;
+    a.lng = locations[i].lng;
+    geoOnly.push(a)
+  }
+  for (let i = 0; i < locations.length; i++) {
+    locationOnly.push(locations.location)
+  }
+  console.log(geoOnly)
+  var myLatLng = { lat: -25.363, lng: 131.044 };
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (let i=0;i<geoOnly.length;i++){
+    var marker = new google.maps.Marker({
+      position: geoOnly[i],
+      map: map,
+    });
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+      return function () {
+        infowindow.setContent(locations[i].location);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+}
 }

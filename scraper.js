@@ -41,7 +41,7 @@ app.get('/scrape/', function (req, res) {
       for (let i=0;i<realLocations.length;i++) {
         json[i] = {};
         json[i].realLocation = realLocations[i];
-        json[i].movieLocations = movieLocations[i];
+        json[i].movieLocation = movieLocations[i];
       }
       console.log(json)
 
