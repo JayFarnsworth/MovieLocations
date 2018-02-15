@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* header */
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+}
+#title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+}
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3vw;
+}
+h2 {
+  font-family: sans-serif;
+  font-size: 2vh;
+}
+
+/* title/results */
+#results-bar {
+  display: none;
+  height: 10vh;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+/* left-bar */
+#left-bar {
+  width: 25vw;
+  height: 90vh;
+  border-right: 1px solid black;
+}
+#poster {
+  width: 22vw;
+  height: auto;
+  margin: 1vw;
+}
+#movie-title {
+  font-family: 'Heebo', sans-serif;
+  font-size: 3vh;
+  margin: 0 1vw;
+}
+
+
+
+#map {
+  height: 100;
+  width: 100%;
+  margin: 2vw;
+}
+#main-search {
+}
+#main-text {
+  height: 100%;
+  width: 50vw;
+  font-size: 5vh;
+  margin: 0;
+  border: 1px solid black;
+  padding: 0;
+}
+button {
+  display: none;
+}

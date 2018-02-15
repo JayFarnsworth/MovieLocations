@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Heebo|Permanent+Marker" rel="stylesheet">
+  <title>Movie Locations</title>
+</head>
+
+<body>
+  <header>
+      <form id='main-search'>
+        <input id='main-text' type='text' placeholder="Search Movies" name='main'>
+        <button type='submit'>Search</button>
+      </form>
+      <div id='title-container'>
+        <h1 id='title'>Italian American West!</h1>
+        <h2>Visualizing Film Locations</h2>
+      </div>
+  </header>
+  <main>
+    <div id='results-bar'>
+      <h3 id='confirm'>Found: </h3>
+    </div>
+    <section>
+      <div id='left-bar'>
+        <img src='' id='poster'>
+        <div id='movie-title-container'>
+          <h3 id='movie-title'>Title!</h3>
+        </div>
+
+
+      </div>
+      <div id='map-container'>
+        <div id="map"></div>
+      </div>
+    </section>
+  </main>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+  <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
