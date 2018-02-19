@@ -1,50 +1,51 @@
 [
     {
         "realLocation": "Tikal National Park, Guatemala",
-        "movieLocations": "Fourth moon of Yavin)                        "
+        "movieLocation": "Fourth moon of Yavin"
     },
     {
         "realLocation": "Ajim, Jerba, Tunisia",
-        "movieLocations": "Mos Eisley, Tatooine)                        "
+        "movieLocation": "Mos Eisley, Tatooine"
     },
     {
         "realLocation": "Chott el Djerid, Nefta, Tunisia",
-        "movieLocations": "Lars family homestead, Tatooine)                        "
+        "movieLocation": "Lars family homestead, Tatooine"
     },
     {
         "realLocation": "Sidi Driss Hotel, Matmata, Tunisia",
-        "movieLocations": "Lars family homestead, Tatooine)                        "
+        "movieLocation": "Lars family homestead, Tatooine"
     },
     {
         "realLocation": "Sidi Bouhlel, Tozeur, Tunisia",
-        "movieLocations": "Tatooine)                        "
+        "movieLocation": "Tatooine"
     },
     {
         "realLocation": "Yuma, Arizona, USA",
-        "movieLocations": "special edition)                        "
+        "movieLocation": "special edition"
     },
     {
         "realLocation": "Death Valley National Park, California, USA",
-        "movieLocations": "Tatooine)                        "
+        "movieLocation": "Tatooine"
     },
     {
         "realLocation": "Yuma, Arizona, USA",
-        "movieLocations": "                       "
+        "movieLocation": ""
     },
     {
         "realLocation": "Shepperton Studios, Shepperton, Surrey, England, UK",
-        "movieLocations": "studio)                        "
+        "movieLocation": "studio"
     },
     {
         "realLocation": "Elstree Studios, Borehamwood, Hertfordshire, England, UK",
-        "movieLocations": "studio)                        "
+        "movieLocation": "studio"
     },
     {
         "realLocation": "Calakmul, Campeche, Mexico",
-        "movieLocations": "                       "
+        "movieLocation": ""
     },
     {
         "realLocation": "Cardington Airship Hangars, Bedfordshire, England, UK",
-        "movieLocations": "Yavin 4 rebel base)                        "
-    }
+        "movieLocation": "Yavin 4 rebel base"
+    },
+    "22 March 1976 - 16 July 1976"
 ]

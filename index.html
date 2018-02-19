@@ -5,29 +5,40 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Heebo|Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title>Movie Locations</title>
 </head>
 
 <body>
   <header>
-      <form id='main-search'>
+      <form id='main-search' autocomplete='off'>
         <input id='main-text' type='text' placeholder="Search Movies" name='main'>
         <button type='submit'>Search</button>
       </form>
       <div id='title-container'>
-        <h1 id='title'>Italian American West!</h1>
+        <h1 id='title'>Exotic Backlots!</h1>
         <h2>Visualizing Film Locations</h2>
       </div>
   </header>
   <main>
-    <div id='results-bar'>
-      <h3 id='confirm'>Found: </h3>
-    </div>
     <section>
       <div id='left-bar'>
-        <img src='' id='poster'>
+        <div id='results'>
+          <h3 id='did-you'>Did you mean?</h3>
+        </div>
+        <div>
+          <img src='' id='poster'>
+        </div>
         <div id='movie-title-container'>
-          <h3 id='movie-title'>Title!</h3>
+          <div id='info-container'>
+            <h3 id='movie-title'>Title!</h3>
+            <h3>Filming Date(s):</h3>
+            <h3 id='filming-dates'>Filming Dates</h3>
+          </div>
+          
+        </div>
+        <h3 id='filming-locations-title'>Filming Locations:</h3>
+        <div id='locations-container'>
         </div>
 
 
